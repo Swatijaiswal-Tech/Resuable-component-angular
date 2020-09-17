@@ -1,0 +1,69 @@
+<header>
+    <h2> Registration Form Example using Reusable Input Field</h2>
+</header>
+<div class="registrationDiv">
+    <form class="registrationForm" [formGroup]="regForm" class="registrationForm" (ngSubmit)="onSubmit()">
+        <app-shared-input
+        [parentForm]="regForm"
+        [controlName]="'fullName'"
+        [placeholder]= "'Enter full name'"
+        [type]="'text'"
+        [isTextArea]="false"
+        [getMessage]="getMessage"
+        maxlength= 20
+        > 
+        </app-shared-input>
+        <app-shared-input
+        [parentForm]="regForm"
+        [controlName]="'phoneNumber'"
+        [placeholder]= "'Enter Phone number'"
+        [type]="'text'"
+        [isTextArea]="false"
+        [getMessage]="getMessage"
+        maxlength= 10
+        > 
+        </app-shared-input>
+        <app-shared-input
+        [parentForm]="regForm"
+        [controlName]="'email'"
+        [placeholder]= "'Enter email address'"
+        [type]="'text'"
+        [isTextArea]="false"
+        [getMessage]="getMessage"
+        maxlength= 20
+        > 
+        </app-shared-input>
+        <app-shared-input
+        [parentForm]="regForm"
+        [controlName]="'password'"
+        [placeholder]= "'Enter Password '"
+        [type]="'text'"
+        [isTextArea]="false"
+        [getMessage]="getMessage"
+        maxlength= 12 
+        > 
+        </app-shared-input>
+
+        <app-shared-input
+        [parentForm]="regForm"
+        [controlName]="'confirmPassword'"
+        [placeholder]= "'re-enter password'"
+        [type]="'text'"
+        [isTextArea]="false"
+        [getMessage]="getMessage"
+        maxlength= 12  
+        > 
+      </app-shared-input>
+        <app-shared-input
+        [parentForm]="regForm"
+        [controlName]="'desciption'"
+        [placeholder]= "'Enter description'"
+        [type]="'text'"
+        [isTextArea]="true"
+        [getMessage]="getMessage"
+        maxlength= 100  
+        > 
+        </app-shared-input>
+        <button mat-flat-button color="primary">Submit</button>
+     </form>   
+ </div>   
