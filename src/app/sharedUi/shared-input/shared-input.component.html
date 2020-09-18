@@ -1,26 +1,15 @@
-
-
 <ng-container [formGroup]="parentForm">
-    <mat-form-field
-    [ngClass]="
+    <mat-form-field [ngClass]="
     [isTextArea ? 'textarea-field' : 'input-field' , 
     (parentForm.get(controlName).touched) 
-    && (parentForm.get(controlName).invalid) ? 'error-filed' : ''] "
-    appearance="fill"> 
-        <textarea matInput 
-        [placeholder]="placeholder"
-        [maxlength]="maxlength"
-        [formControlName]="controlName" 
-        *ngIf="isTextArea">
+    && (parentForm.get(controlName).invalid) ? 'error-filed' : ''] " appearance="fill">
+        <textarea matInput [placeholder]="placeholder" [maxlength]="maxlength" [formControlName]="controlName"
+            *ngIf="isTextArea">
         </textarea>
-        <input matInput 
-        [placeholder]="placeholder"
-        [maxlength]="maxlength"
-        [formControlName]="controlName" 
-        [type]="type"
-        *ngIf="!isTextArea"/>
+        <input matInput [placeholder]="placeholder" [maxlength]="maxlength" [formControlName]="controlName"
+            [type]="type" *ngIf="!isTextArea" />
         <mat-error class="errorMessage">
             {{getMessage(parentForm, controlName)}}
-        </mat-error>    
+        </mat-error>
     </mat-form-field>
 </ng-container>
